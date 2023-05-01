@@ -10,5 +10,8 @@ npm-debug.*
 *.orig.*
 web-build/
 
-# macOS
+# ubuntu
 .DS_Store
+.vscode
+.expo-shared
+
