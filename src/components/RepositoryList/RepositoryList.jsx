@@ -1,8 +1,10 @@
-import { FlatList, View, StyleSheet, Text } from 'react-native';
+import { FlatList, View, StyleSheet } from 'react-native';
+
+import RepositoryItem from './RepositoryItem';
 
 const styles = StyleSheet.create({
     separator: {
-        height: 10,
+        height: 5,
     }
 });
 
@@ -51,6 +53,17 @@ const repositories = [
       reviewCount: 0,
       ownerAvatarUrl: 'https://avatars3.githubusercontent.com/u/13142323?v=4',
     },
+    {
+      id: 'django.django2',
+      fullName: 'django/django',
+      description: 'The Web framework for perfectionists with deadlines.',
+      language: 'Python',
+      forksCount: 21015,
+      stargazersCount: 48496,
+      ratingAverage: 73,
+      reviewCount: 5,
+      ownerAvatarUrl: 'https://avatars2.githubusercontent.com/u/27804?v=4',
+    },
   ];
 
   const ItemSeparator = () => <View style={styles.separator} />;
@@ -61,15 +74,7 @@ const repositories = [
             data={repositories}
             ItemSeparatorComponent={ItemSeparator}
             renderItem={({item}) => 
-                <View>
-                    <Text>Full name: {item.fullName}</Text>
-                    <Text>Description: {item.description}</Text>
-                    <Text>Language: {item.language}</Text>
-                    <Text>Stars: {item.stargazersCount}</Text>
-                    <Text>Forks: {item.forksCount}</Text>
-                    <Text>Reviews: {item.reviewCount}</Text>
-                    <Text>Rating: {item.ratingAverage}</Text>
-                </View>
+              <RepositoryItem repository={item}/>
             }
         />
     )
