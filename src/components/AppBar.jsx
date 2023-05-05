@@ -5,7 +5,7 @@ import AppBarTab from "./AppBarTab";
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: Constants.statusBarHeight,
+        marginTop: Constants.statusBarHeight,
     },
 });
 

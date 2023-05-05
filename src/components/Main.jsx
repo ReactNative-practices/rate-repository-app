@@ -1,15 +1,26 @@
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { Route, Routes, Navigate } from "react-router-native";
 
-import theme from './Theme';
 
 import RepositoryList from './RepositoryList/RepositoryList';
 import AppBar from './AppBar';
 
+import theme from './Theme';
+
+const styles = StyleSheet.create({
+    container: {
+        backgroundColor: theme.colors.mainBackground
+    }
+});
+
 const Main = () => {
     return (
-        <View style={{ backgroundColor: theme.colors.bodyBG }}>
+        <View style={styles.container}>
             <AppBar />
-            <RepositoryList />
+            <Routes>
+                <Route path='/' element={<RepositoryList />} exact />
+                <Route path='*' element={<Navigate to="/" />} replace />
+            </Routes>
         </View>
     )
 }
