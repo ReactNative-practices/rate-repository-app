@@ -13,9 +13,9 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginHorizontal: 20,
         paddingHorizontal: 10,
-        paddingVertical: 3,
-        borderWidth: 1,
-        borderRadius: 9,
+        paddingVertical: 5,
+        borderWidth: 2,
+        borderRadius: 10,
         borderColor: "#b6b6b6"
     },
     signButton: {
