@@ -6,15 +6,16 @@ import Text from "./Text";
 
 const styles = StyleSheet.create({
     errorText: {
-        marginTop: 5,
-        color: "#d73a4a"
+        marginTop: 1,
+        marginLeft: 25,
+        color: "#d73a4a",
     }
 });
 
 const FormikTextInput = ({ name, ...props }) => {
     const [field, meta, helpers] = useField(name);
     const showError = meta.touched && meta.error;
-
+    const showValid = meta.touched && !meta.error;
     return (
         <>
             <TextInput
@@ -22,6 +23,7 @@ const FormikTextInput = ({ name, ...props }) => {
                 onBlur={() => helpers.setTouched(true)}
                 value={field.value}
                 error={showError}
+                valid={showValid}
                 {...props}
             />
             {showError && <Text style={styles.errorText}>{meta.error}</Text>}

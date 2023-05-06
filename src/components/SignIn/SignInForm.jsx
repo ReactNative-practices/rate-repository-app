@@ -10,8 +10,9 @@ const styles = StyleSheet.create({
         flexDirection: "column"
     },
     textInput: {
-        margin: 10,
-        paddingHorizontal: 9,
+        marginTop: 15,
+        marginHorizontal: 20,
+        paddingHorizontal: 10,
         paddingVertical: 3,
         borderWidth: 1,
         borderRadius: 9,
