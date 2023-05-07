@@ -1,7 +1,7 @@
 import { View, Pressable, StyleSheet } from "react-native";
 import Text from "../Text";
 import FormikTextInput from "../FormikTextInput";
-import theme from "../Theme";
+import theme from "../../Theme";
 
 const styles = StyleSheet.create({
     container: {

@@ -1,7 +1,7 @@
 
 import { View, StyleSheet } from 'react-native'
 
-import theme from '../Theme';
+import theme from '../../Theme';
 
 import Avatar from '../Avatar';
 import InfoSection from './InfoSection';

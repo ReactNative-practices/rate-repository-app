@@ -1,7 +1,8 @@
 import { StyleSheet, View } from "react-native";
-import theme from "../Theme";
+import theme from "../../Theme";
 import Text from "../Text";
-import { numToFixedStr } from "../../utils/utils";
+
+import { numToFixedStr } from "../../utils";
 
 const styles = StyleSheet.create({
     container: {
