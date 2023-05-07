@@ -3,6 +3,7 @@ import Constants from 'expo-constants';
 
 import AppBarTab from "./AppBarTab";
 import theme from "../../Theme";
+import useSignOut from "../../hooks/useSignOut";
 
 const styles = StyleSheet.create({
     container: {
@@ -20,11 +21,18 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+    const { signOut, data, loading } = useSignOut();
+    console.log("Appbar", data);
+
     return (
         <View style={styles.container}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 <AppBarTab text="Repositories" to="/" />
-                <AppBarTab text="Sign in" to="/signin" />
+                {!loading && data.me ? (
+                    <AppBarTab text="Sign out" to="/" onPress={signOut} />
+                ) : (
+                    <AppBarTab text="Sign in" to="/signin" />
+                )}
             </ScrollView>
         </View>
     )
