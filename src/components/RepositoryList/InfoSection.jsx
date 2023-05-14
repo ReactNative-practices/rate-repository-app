@@ -26,14 +26,14 @@ const  styles = StyleSheet.create({
 const InfoSection = ({ item }) => {
     return (
         <View style={styles.flexItem}>
-            <Text fontWeight='bold' style={styles.itemMargin}>
+            <Text testID="repositoryName" fontWeight='bold' style={styles.itemMargin}>
                 {item.fullName}
             </Text>
-            <Text color='textSecondary' style={styles.itemMargin}>
+            <Text testID="repositoryDescription" color='textSecondary' style={styles.itemMargin}>
                 {item.description}
             </Text>
             <View style={[styles.tagItem]}>
-                <Text style={styles.colors}>
+                <Text testID="repositoryLanguage" style={styles.colors}>
                     {item.language}
                 </Text>
             </View>

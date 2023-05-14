@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 
 const RepositoryItem = ({ repository }) => {
     return (
-        <View style={styles.card}>
+        <View testID="repositoryItem" style={styles.card}>
             <View style={styles.container}>
                 <Avatar avatarUrl={repository.ownerAvatarUrl}/>
                 <InfoSection item={repository}/>
