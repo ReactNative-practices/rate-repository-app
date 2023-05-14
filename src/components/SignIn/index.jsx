@@ -1,4 +1,4 @@
-import { ToastAndroid } from "react-native";
+import { View, Dimensions, ToastAndroid } from "react-native";
 import { Formik } from "formik";
 import * as yup from 'yup';
 import { useNavigate } from "react-router-native";
@@ -24,6 +24,7 @@ const validationSchema = yup.object().shape({
 });
 
 export const SignInContainer = ({ onSubmit }) => {
+
     return (
         <Formik
             initialValues={initialValues}
@@ -53,7 +54,13 @@ const SignIn = () => {
             ToastAndroid.show('Invalid username or password!', ToastAndroid.SHORT);
         }
     }
-    return <SignInContainer onSubmit={onSubmit} />;
+    const { height } = Dimensions.get('window');
+
+    return (
+        <View style={{ height }}>
+            <SignInContainer onSubmit={onSubmit} />
+        </View>
+    )
     
 };
 

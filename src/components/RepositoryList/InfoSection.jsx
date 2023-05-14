@@ -18,8 +18,8 @@ const  styles = StyleSheet.create({
         paddingVertical: 6,
         paddingHorizontal: 10
     },
-    colors: {
-        color: 'white'
+    textColor: {
+        color: theme.colors.secondary
     }
 });
 
@@ -33,7 +33,7 @@ const InfoSection = ({ item }) => {
                 {item.description}
             </Text>
             <View style={[styles.tagItem]}>
-                <Text testID="repositoryLanguage" style={styles.colors}>
+                <Text testID="repositoryLanguage" style={styles.textColor}>
                     {item.language}
                 </Text>
             </View>

@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: "white",
         display: "flex",
-        flexDirection: "column"
+        flexDirection: "column",
+        padding: 15
     },
     textInput: {
         marginTop: 15,
@@ -26,24 +27,31 @@ const styles = StyleSheet.create({
     textColor: {
         color: "white",
     },
+    spacing: {
+        marginBottom: 10
+    }
 })
 
 const SignInForm = ({ onSubmit }) => {
     return (
         <View style={styles.container}>
-            <FormikTextInput
-                style={styles.textInput}
-                name="username"
-                placeholder="Username"
-                testID='usernameField'
-            />
-            <FormikTextInput
-                style={styles.textInput}
-                name="password"
-                placeholder="Password"
-                secureTextEntry={true}
-                testID='passwordField'
-            />
+            <View style={styles.spacing}>
+                <FormikTextInput
+                    style={styles.textInput}
+                    name="username"
+                    placeholder="Username"
+                    testID='usernameField'
+                />
+            </View>
+            <View style={styles.spacing}>
+                <FormikTextInput
+                    style={styles.textInput}
+                    name="password"
+                    placeholder="Password"
+                    secureTextEntry={true}
+                    testID='passwordField'
+                />
+            </View>
             <Pressable onPress={onSubmit} testID='submitButton' style={[styles.textInput, styles.signButton]}>
                 <Text style={styles.textColor}>Sign in</Text>
             </Pressable>
