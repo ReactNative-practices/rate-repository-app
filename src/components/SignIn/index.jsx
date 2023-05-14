@@ -23,6 +23,18 @@ const validationSchema = yup.object().shape({
         .required('Password is required!')
 });
 
+export const SignInContainer = ({ onSubmit }) => {
+    return (
+        <Formik
+            initialValues={initialValues}
+            onSubmit={onSubmit}
+            validationSchema={validationSchema}
+        >
+            {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
+        </Formik>
+    )
+}
+
 const SignIn = () => {
     const [signIn] = useSignIn();
     const navigate = useNavigate();
@@ -41,15 +53,8 @@ const SignIn = () => {
             ToastAndroid.show('Invalid username or password!', ToastAndroid.SHORT);
         }
     }
-    return (
-        <Formik
-            initialValues={initialValues}
-            onSubmit={onSubmit}
-            validationSchema={validationSchema}
-        >
-            {({ handleSubmit }) => <SignInForm onSubmit={handleSubmit} />}
-        </Formik>
-    )
+    return <SignInContainer onSubmit={onSubmit} />;
+    
 };
 
 export default SignIn;
