@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     container: {
         paddingTop: Constants.statusBarHeight,
         backgroundColor: theme.colors.appBarBG,
-        height: 75,
+        height: 80,
         justifyContent: "space-around",
         alignItems: "center",
         paddingLeft: 15,
@@ -29,7 +29,10 @@ const AppBar = () => {
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 <AppBarTab text="Repositories" to="/" />
                 {!loading && data.me ? (
+                    <>
+                    <AppBarTab text="Create a review" to="/create"/>
                     <AppBarTab text="Sign out" to="/" onPress={signOut} />
+                    </>
                 ) : (
                     <AppBarTab text="Sign in" to="/signin" />
                 )}

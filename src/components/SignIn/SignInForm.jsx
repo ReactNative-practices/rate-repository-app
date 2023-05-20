@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     signButton: {
         backgroundColor: theme.colors.primary,
         alignItems: "center",
-        paddingVertical: 9
+        paddingVertical: 10
     },
     textColor: {
         color: "white",
