@@ -25,7 +25,8 @@ export default {
     adaptiveIcon: {
       foregroundImage: "./assets/adaptive-icon.png",
       backgroundColor: "#FFFFFF"
-    }
+    },
+    package: "com.anonymous.raterepositoryapp"
   },
   web: {
     favicon: "./assets/favicon.png"

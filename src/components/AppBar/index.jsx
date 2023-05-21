@@ -23,12 +23,12 @@ const styles = StyleSheet.create({
 const AppBar = () => {
     const { signOut, data, loading } = useSignOut();
     console.log("Appbar", data);
-
+    const me = data?.me;
     return (
         <View style={styles.container}>
             <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                 <AppBarTab text="Repositories" to="/" />
-                {!loading && data.me ? (
+                {!loading && me ? (
                     <>
                     <AppBarTab text="Create a review" to="/create"/>
                     <AppBarTab text="Sign out" to="/" onPress={signOut} />
